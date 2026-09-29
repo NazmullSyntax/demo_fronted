@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staylic · founder, designer & builder</title>
+  <!-- Google Fonts for a clean, modern look (inspired by GK's minimal aesthetic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #fefcf8;   /* warm paper tone, like many personal sites */
+      color: #1a1a1a;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem 0 3rem;
+    }
+
+    /* Header section — minimalist, name + role */
+    .intro {
+      margin-bottom: 3.5rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      padding-bottom: 2rem;
+    }
+
+    .intro h1 {
+      font-size: clamp(2rem, 7vw, 3.2rem);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+      color: #000;
+    }
+
+    .intro .subhead {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: #4a4a4a;
+      margin-bottom: 1.2rem;
+    }
+
+    .intro p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: #3d3d3d;
+      max-width: 680px;
+      margin-bottom: 1rem;
+    }
+
+    .intro .plaid-owl {
+      font-size: 0.95rem;
+      color: #5e5e5e;
+      font-style: italic;
+      border-left: 3px solid #1a1a1a;
+      padding-left: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    /* List section — inspired by “100 things” but simplified and styled */
+    .list-section {
+      margin: 3.2rem 0 3rem;
+    }
+
+    .list-section h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .list-section h2::before {
+      content: '✳';
+      font-size: 1.2rem;
+      color: #9e9e9e;
+      font-weight: 300;
+    }
+
+    .list-sub {
+      font-size: 1rem;
+      color: #5e5e5e;
+      margin-bottom: 1.8rem;
+      font-weight: 300;
+      border-left: 2px solid #e0e0e0;
+      padding-left: 1.2rem;
+    }
+
+    /* two-column list for compact display */
+    .influence-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.4rem 2rem;
+      list-style: none;
+      margin-bottom: 2.5rem;
+    }
+
+    .influence-list li {
+      font-size: 0.98rem;
+      font-weight: 350;
+      padding: 0.25rem 0;
+      color: #1f1f1f;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+      line-height: 1.4;
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+    }
+
+    .influence-list li::before {
+      content: '—';
+      color: #b0b0b0;
+      font-weight: 300;
+      margin-right: 0.3rem;
+    }
+
+    /* Work / projects — like GK’s company list */
+    .work-section {
+      margin: 3.5rem 0 2.8rem;
+    }
+
+    .work-section h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .work-section h2::before {
+      content: '⚡';
+      font-size: 1.2rem;
+      color: #9e9e9e;
+      font-weight: 300;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.8rem 1.5rem;
+    }
+
+    .work-item {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      padding-bottom: 1.2rem;
+    }
+
+    .work-item h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+      color: #000;
+    }
+
+    .work-item p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #3d3d3d;
+      line-height: 1.5;
+    }
+
+    .work-item .highlight-text {
+      font-weight: 400;
+      color: #000;
+    }
+
+    .readme-cta {
+      background: #f5f2ee;
+      border-radius: 18px;
+      padding: 1.8rem 2rem;
+      margin: 2.5rem 0 2rem;
+      text-align: center;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .readme-cta p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: #2c2c2c;
+      margin-bottom: 0.8rem;
+    }
+
+    .readme-cta .btn {
+      display: inline-block;
+      background: #1a1a1a;
+      color: #fefcf8;
+      text-decoration: none;
+      padding: 0.65rem 1.6rem;
+      border-radius: 40px;
+      font-weight: 400;
+      font-size: 0.95rem;
+      transition: background 0.2s ease;
+      margin-top: 0.5rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .readme-cta .btn:hover {
+      background: #333;
+    }
+
+    /* Swarm / status — playful line */
+    .status {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #6b6b6b;
+      padding: 1rem 0 0.5rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      margin-top: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .status a {
+      color: #1a1a1a;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-weight: 400;
+    }
+
+    .year {
+      font-size: 0.85rem;
+      color: #9e9e9e;
+      margin-top: 2.5rem;
+      text-align: right;
+      font-weight: 300;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2rem 1rem;
+      }
+
+      .intro h1 {
+        font-size: 2.2rem;
+      }
+
+      .influence-list {
+        grid-template-columns: 1fr;
+      }
+
+      .work-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .readme-cta {
+        padding: 1.5rem 1rem;
+      }
+
+      .status {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* subtle fade */
+    .intro, .list-section, .work-section {
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Intro: personal, witty, with a touch of GK's voice -->
+    <header class="intro">
+      <h1>Staylic</h1>
+      <div class="subhead">Founder · designer · developer · occasional listmaker</div>
+      <p>
+        I'm Staylic. I build things for the internet — sometimes APIs, sometimes dashboards, 
+        always with an eye for the details that make software feel human. 
+        I wear entirely too much plaid, I'm a triple Aries (but have no clue what that means), 
+        and almost everything I own has an owl on it.
+      </p>
+      <p>
+        Currently I'm the founder of <strong>ReadMe</strong>, a way to create beautiful, interactive API documentation. 
+        Previously I worked on Firefox Add-ons at Mozilla, helped Greylock with superhero-themed recruiting sites, 
+        and built custom travel guides at Offbeat Guides. I also spent time at GigaOM and Watsi.
+      </p>
+      <div class="plaid-owl">
+        ⚡ “Maker's Schedule, Manager's Schedule” is a daily read. Also, please do not be cynical.
+      </div>
+    </header>
+
+    <!-- The 100 things list — inspired by GK's collection, but curated & shortened -->
+    <section class="list-section">
+      <h2>Things that shaped how I see the world</h2>
+      <div class="list-sub">
+        (A partial list — in no particular order. Many years left to discover the rest.)
+      </div>
+      <ul class="influence-list">
+        <li>All I've Ever Wanted (Live) by Airborne Toxic Event</li>
+        <li>Ask Culture vs Guess Culture</li>
+        <li>Story of Your Life and Others by Ted Chiang</li>
+        <li>A Dark Quiet Death (S1E5) from Mythic Quest</li>
+        <li>The Midnight Organ Fight by Frightened Rabbit</li>
+        <li>xkcd, a webcomic of romance, sarcasm, math, and language</li>
+        <li>The Greatest Title Sequence I've Ever Seen by Tom Scott</li>
+        <li>Game Changer</li>
+        <li>Getting Real by 37 Signals</li>
+        <li>How to Say Nothing in 500 Words</li>
+        <li>Firefly</li>
+        <li>69 Love Songs by Magnetic Fields</li>
+        <li>Kitchen Confidential (Audiobook) by Anthony Bourdain</li>
+        <li>Please do not be cynical by Conan O'Brien</li>
+        <li>The Sad, Beautiful Fact That We're All Going To Miss Almost Everything</li>
+        <li>How to Win Friends and Influence People</li>
+        <li>We Don't Sell Saddles Here by Stewart Butterfield</li>
+        <li>Wait Wait... Don't Tell Me!</li>
+        <li>Barenaked Ladies</li>
+        <li>The Story of Watsi by Chase Adams at Startup School</li>
+        <li>The Rehearsal by Nathan Fielder</li>
+        <li>Offbook: The Improvised Musical</li>
+        <li>Bojack Horseman</li>
+        <li>Mystery Show by Starlee Kine</li>
+        <li>Maker's Schedule, Manager's Schedule by Paul Graham</li>
+        <li>My Girlfriend's Boyfriend by Mike Birbiglia</li>
+        <li>Finding Frances from Nathan for You</li>
+        <li>Orson Welles Talks About Making 'Citizen Kane'</li>
+        <li>Kellogg's from One More Thing by B. J. Novak</li>
+        <li>You Made It Weird by Pete Holmes</li>
+        <li>Arrested Development</li>
+        <li>Attached</li>
+        <li>Jake and Amir</li>
+        <li>Little Big Details</li>
+        <li>Magic For Humans</li>
+        <li>1,001 Rules for my Unborn Son</li>
+        <li>Hamilton (Original Broadway Cast)</li>
+      </ul>
+      <p style="font-size: 0.95rem; color: #6b6b6b; font-weight: 300; margin-top: 0.5rem;">
+        There aren't yet 100 things on this list… I have many years to go and with many more amazing things left to discover.
+      </p>
+    </section>
+
+    <!-- Work / projects — structured like GK's list of companies -->
+    <section class="work-section">
+      <h2>Work &amp; projects</h2>
+      <div class="work-grid">
+        <div class="work-item">
+          <h3>ReadMe</h3>
+          <p>I founded ReadMe, a way to create beautiful, interactive API documentation. <span class="highlight-text">Check it out →</span></p>
+        </div>
+        <div class="work-item">
+          <h3>Watsi</h3>
+          <p>Watsi brings high-impact, low-cost healthcare to people in need. <span class="highlight-text">You should donate!</span></p>
+        </div>
+        <div class="work-item">
+          <h3>Warriors</h3>
+          <p>Point guard. Just kidding. I built some dashboards showing business-y stuff.</p>
+        </div>
+        <div class="work-item">
+          <h3>Greylock</h3>
+          <p>I helped Greylock with their superhero-themed college recruiting websites.</p>
+        </div>
+        <div class="work-item">
+          <h3>Mozilla</h3>
+          <p>I worked on the Firefox Add-Ons site as a web developer and product manager.</p>
+        </div>
+        <div class="work-item">
+          <h3>GigaOM</h3>
+          <p>GigaOM was a news organization focused technology and other similar topics.</p>
+        </div>
+        <div class="work-item">
+          <h3>Offbeat Guides</h3>
+          <p>This was the first startup I worked at! We built custom-made physical travel guides.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ReadMe CTA — like the original site's callout -->
+    <div class="readme-cta">
+      <p>Okay okay, I know there's a lot on this site. However, this is my main passion! I'm the founder of <strong>ReadMe</strong>, a way to build interactive API documentation!</p>
+      <a href="#" class="btn">Check out ReadMe</a>
+    </div>
+
+    <!-- Status / swarm line + year -->
+    <div class="status">
+      <span>Last seen…</span>
+      <span>Swarm data is currently unavailable. <a href="#">View my Swarm profile →</a></span>
+    </div>
+
+    <div class="year">2025 · staylic</div>
+  </div>
+</body>
+</html>
