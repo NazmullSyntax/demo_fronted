@@ -169,3 +169,30 @@ code { font-size: 0.9em; }
   .page-intro { padding-block: 70px 28px; }
   .site-footer { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 18px; }
 }
+
+nav a { position: relative; }
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 0; height: 2px;
+  background: var(--accent);
+  transition: width .25s;
+}
+nav a:hover::after { width: 100%; }
+
+.card { transition: transform .2s, box-shadow .2s; }
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+#theme-toggle {
+  background: none;
+  border: 1px solid var(--fg);
+  color: var(--fg);
+  padding: .35rem .6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
