@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Project One",
+    "description": "Replace this sample with a short explanation of a project you have built.",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "url": ""
+  },
+  {
+    "title": "Project Two",
+    "description": "Describe the problem, your approach, and what you learned along the way.",
+    "stack": ["Add your tools"],
+    "url": ""
+  },
+  {
+    "title": "Project Three",
+    "description": "Add another project here, then link to its live demo or source code.",
+    "stack": ["Add your tools"],
+    "url": ""
+  }
+]
